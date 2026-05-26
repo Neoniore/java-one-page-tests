@@ -1,9 +1,16 @@
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 public class LoginTests {
+
+//    @BeforeEach
+//    void setup() {
+//        closeWebDriver();
+//    }
+
     @Test
     void successfulAuthorizationTest() {
         open("https://qa-guru.github.io/one-page-form/login.html");
@@ -15,6 +22,7 @@ public class LoginTests {
         $("[data-testid=submit-button]").click();
 
         $("[data-testid=welcome-message]").shouldHave(text("Welcome, user1!"));
+        closeWebDriver();
     }
 
     @Test
@@ -26,6 +34,7 @@ public class LoginTests {
         $("[data-testid=submit-button]").click();
 
         $("[data-testid=error-message]").shouldHave(text("Wrong login or password"));
+        closeWebDriver();
     }
 
 }
