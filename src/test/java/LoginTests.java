@@ -1,24 +1,9 @@
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.nio.file.Paths;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class LoginTests {
-
-//    @BeforeEach
-//    void setup() {
-//        closeWebDriver();
-//    }
-
-    @BeforeAll
-    static void setup() {
-        Configuration.baseUrl = Paths.get("src/test/resources/pages").toUri().toString();
-    }
+public class LoginTests extends TestBase {
 
     @Test
     void successfulAuthorizationTest() {
