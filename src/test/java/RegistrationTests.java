@@ -6,6 +6,7 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationTests extends TestBase {
+
     @Test
     void successfulRegistrationTest() {
         open("/automation-practice-form.html");

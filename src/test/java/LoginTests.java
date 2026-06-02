@@ -14,7 +14,6 @@ public class LoginTests extends TestBase {
         $("[data-testid=submit-button]").click();
 
         $("[data-testid=welcome-message]").shouldHave(text("Welcome, user1!"));
-        closeWebDriver();
     }
 
     @Test
@@ -26,7 +25,5 @@ public class LoginTests extends TestBase {
         $("[data-testid=submit-button]").click();
 
         $("[data-testid=error-message]").shouldHave(text("Wrong login or password"));
-        closeWebDriver();
     }
-
 }

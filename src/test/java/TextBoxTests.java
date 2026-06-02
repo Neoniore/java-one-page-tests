@@ -5,6 +5,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class TextBoxTests extends TestBase{
+
     @Test
     void successfulFillFormTest() {
         open("/text-box.html");
@@ -19,6 +20,4 @@ public class TextBoxTests extends TestBase{
         $("[id=output] [id=currentAddress]").shouldHave(text("first address 1"));
         $("[id=output] [id=permanentAddress]").shouldHave(text("second address 2"));
     }
-
-
 }
