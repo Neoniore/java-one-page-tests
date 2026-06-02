@@ -1,5 +1,9 @@
+import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.nio.file.Paths;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
@@ -11,13 +15,16 @@ public class LoginTests {
 //        closeWebDriver();
 //    }
 
+    @BeforeAll
+    static void setup() {
+        Configuration.baseUrl = Paths.get("src/test/resources/pages").toUri().toString();
+    }
+
     @Test
     void successfulAuthorizationTest() {
-        open("https://qa-guru.github.io/one-page-form/login.html");
+        open("/login.html");
 
         $("[data-testid=login-input]").setValue("user1");
-//        $("[id=login-input]").setValue("user1");
-//        $("#login-input").setValue("user1");
         $("[data-testid=password-input]").setValue("password1");
         $("[data-testid=submit-button]").click();
 
@@ -27,7 +34,7 @@ public class LoginTests {
 
     @Test
     void wrongPasswordAuthorizationTest() {
-        open("https://qa-guru.github.io/one-page-form/login.html");
+        open("/login.html");
 
         $("[data-testid=login-input]").setValue("user1");
         $("[data-testid=password-input]").setValue("WRONG PASSWORD");
