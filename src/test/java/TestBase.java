@@ -11,7 +11,7 @@ public class TestBase {
     static void setup() {
         Configuration.baseUrl = Paths.get("src/test/resources/pages").toUri().toString();
         Configuration.browser = "chrome";
-        Configuration.browserSize = "1024x768";
+        Configuration.browserSize = "1080";
 //        Configuration.browserVersion = "148.0";
 //        Configuration.headless = true;
 //        Configuration.pageLoadStrategy = "eager";
